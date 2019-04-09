@@ -3,4 +3,4 @@
 	* setup
 		line2
 		new line
-		another line
+		another word
