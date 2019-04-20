@@ -45,7 +45,7 @@ def train(train_path, test_path):
 	
 	mc = keras.callbacks.ModelCheckpoint('weights{epoch:08d}.h5', 
                                      save_weights_only=True, period=1)
-	#classifier.fit(X_train, Y_train, callbacks=[mc])
+	classifier.fit(X_train, Y_train, callbacks=[mc])
 
 	#classifier.save("/home/baba/classify_train.h5")
 
