@@ -6,8 +6,8 @@ import numpy as np
 from os import listdir
 from os.path import join,splitext,basename
 from imgaug import augmenters as iaa
-
-
+import random
+global prob=0.7
 
 def img_aug_emboss(image_folder):
 
@@ -18,6 +18,10 @@ def img_aug_emboss(image_folder):
 	for an_image in image_files:
 		pbar.update(1)
 
+		randn = random.random()
+		if(randn>prob):
+			continue
+					
 		image_name_split = an_image.split('.')
 		extension_name = image_name_split[1]
 		base_name = image_name_split[0]
@@ -47,6 +51,10 @@ def img_aug_sharpen(image_folder):
         for an_image in image_files:
                 pbar.update(1)
 
+		randn = random.random()
+		if(randn>prob):
+			continue
+
                 image_name_split = an_image.split('.')
                 extension_name = image_name_split[1]
                 base_name = image_name_split[0]
@@ -74,6 +82,10 @@ def img_aug_crop(image_folder):
 
         for an_image in image_files:
                 pbar.update(1)
+
+		randn = random.random()
+		if(randn>prob):
+			continue
 
                 image_name_split = an_image.split('.')
                 extension_name = image_name_split[1]
@@ -103,6 +115,10 @@ def img_aug_contrast(image_folder):
         for an_image in image_files:
                 pbar.update(1)
 
+		randn = random.random()
+		if(randn>prob):
+			continue
+
                 image_name_split = an_image.split('.')
                 extension_name = image_name_split[1]
                 base_name = image_name_split[0]
@@ -129,6 +145,10 @@ def img_aug_fliplr(image_folder):
         pbar = tqdm(total=len(image_files))
         for an_image in image_files:
                 pbar.update(1)
+
+		randn = random.random()
+		if(randn>prob):
+			continue
 
                 image_name_split = an_image.split('.')
                 extension_name = image_name_split[1]
@@ -157,6 +177,10 @@ def img_aug_blur(image_folder):
 
         for an_image in image_files:
                 pbar.update(1)
+
+		randn = random.random()
+		if(randn>prob):
+			continue
 
                 image_name_split = an_image.split('.')
                 extension_name = image_name_split[1]
